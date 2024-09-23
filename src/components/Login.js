@@ -1,7 +1,7 @@
 export default function Login() {
   return (
     <>
-      <h1>Giriş Yap</h1>
+      <h1>Beklemede</h1>
     </>
   );
 }
