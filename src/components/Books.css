@@ -1,0 +1,17 @@
+/* Light background for even table cells */
+tr:nth-child(even) {
+    background-color: #f0f0f0; /* Light color */
+  }
+  
+  /* Dark background for odd table cells */
+  tr:nth-child(odd) {
+    background-color: #b8b7b7; /* Dark color */
+  }
+thead td{
+    background-color: #ffffff
+}
+  table {
+    width: 100%;
+    float: left;
+    padding: 15px;
+  }

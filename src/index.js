@@ -1,22 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar.js";
-import Login from "./components/Login.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Books from "./components/Books.js";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
   {
     path: "/books",
     element: <Books />,
