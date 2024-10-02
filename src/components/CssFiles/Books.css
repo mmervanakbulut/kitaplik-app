@@ -1,5 +1,6 @@
-body{
-  background-color: rgb(132, 206, 171);
+.book-list{
+  margin: 10px;
+  overflow-x: auto;
 }
 
 /* Light background for even table cells */

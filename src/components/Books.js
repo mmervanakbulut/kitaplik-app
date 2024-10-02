@@ -23,7 +23,7 @@ export default function Books() {
   if (!books.length) return <p>No books available</p>;
 
   return (
-    <div>
+    <div className="book-list">
       <table>
         <thead>
           <tr>
