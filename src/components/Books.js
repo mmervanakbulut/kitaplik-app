@@ -25,20 +25,24 @@ export default function Books() {
   return (
     <div className="book-list">
       <table>
+        {/* Table Header */}
         <thead>
           <tr>
-            <td>#</td>
-            <td>Kitap Adı</td>
-            <td>Kitap Türü</td>
-            <td>Sayfa Sayısı</td>
-            <td>Yazar Adı</td>
-            <td>Soyadı</td>
-            <td>Yayınevi</td>
+            <th>#</th>
+            <th>Kitap Adı</th>
+            <th>Kitap Türü</th>
+            <th>Sayfa Sayısı</th>
+            <th>Yazar Adı</th>
+            <th>Soyadı</th>
+            <th>Yayınevi</th>
           </tr>
         </thead>
         <tbody>
           {books.map((book, index) => (
-            <tr key={book.id}>
+            <tr
+              key={book.id}
+              className={index % 2 === 0 ? "even-row" : "odd-row"}
+            >
               <td>{index + 1}</td>
               <td>{book.title}</td>
               <td>{book.description}</td>

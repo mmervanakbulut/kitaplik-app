@@ -1,27 +1,35 @@
-.book-list{
-  margin: 10px;
-  overflow-x: auto;
+.book-list {
+  margin: 20px auto; /* Center the container */
+  background-color: #d1d5db; /* Light gray-blue */
+  padding: 15px; /* Inner padding */
+  border-radius: 8px;
+  max-width: 1200px; /* Set a maximum width */
+  border: 1px solid #3a5e98; /* Border to match navbar */
 }
 
-/* Light background for even table cells */
-tbody tr:nth-child(even) {
-  background-color: #3f4658; /* Light color */
-}
-  
-/* Dark background for odd table cells */
-tbody tr:nth-child(odd) {
-  background-color: #788096; /* Dark color */
-}
-thead td{
-  background-color: #ffffff;
-  padding: 0.5%;
-}
-tbody td{
-  color: #ffffff;
-  padding: 0.5%;
-}
 table {
   width: 100%;
-  float: left;
-  padding: 15px;
- }
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #3a5e98; /* Darker background for header */
+  color: #ffffff; /* White text for contrast */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #4f657e; /* Dark blue-gray for even rows */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #607a94; /* Lighter blue-gray for odd rows */
+}
+
+td {
+  color: #ffffff; /* White text for readability */
+}

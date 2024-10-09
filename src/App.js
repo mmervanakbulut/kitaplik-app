@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar.js";
+import Default from "./Default.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Books from "./components/Books.js";
 import AddAuthor from "./components/Operations/AddAuthor.js";
@@ -8,6 +9,10 @@ import AddBook from "./components/Operations/AddBook.js";
 
 function App() {
   const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Default />,
+    },
     {
       path: "/books",
       element: <Books />,
@@ -26,7 +31,7 @@ function App() {
     },
   ]);
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
       <RouterProvider router={router} />
     </div>

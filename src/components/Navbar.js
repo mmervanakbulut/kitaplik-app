@@ -5,6 +5,9 @@ function Navbar() {
     <div className="navbar">
       <ul className="navbar-tabs">
         <li>
+          <a href="/">Ana Sayfa</a>
+        </li>
+        <li>
           <a href="books">Kitaplarım</a>
         </li>
         <li>
