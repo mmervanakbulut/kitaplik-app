@@ -1,38 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import App from "./App.js";
 import reportWebVitals from "./reportWebVitals";
-import Navbar from "./components/Navbar.js";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Books from "./components/Books.js";
-import AddAuthor from "./components/Operations/AddAuthor.js";
-import AddPublisher from "./components/Operations/AddPublisher.js";
-import AddBook from "./components/Operations/AddBook.js";
-
-const router = createBrowserRouter([
-  {
-    path: "/books",
-    element: <Books />,
-  },
-  {
-    path: "/addAuthor",
-    element: <AddAuthor />,
-  },
-  {
-    path: "/addPublisher",
-    element: <AddPublisher />,
-  },
-  {
-    path: "/addBook",
-    element: <AddBook />,
-  },
-]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Navbar />
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
 
