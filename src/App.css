@@ -1,4 +1,8 @@
 .app {
   text-align: left;
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
 }
-
+.navbar{
+  grid-column: 2/3;
+}

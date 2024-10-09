@@ -1,5 +1,4 @@
 import "./App.css";
-import Navbar from "./components/Navbar.js";
 import Default from "./Default.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Books from "./components/Books.js";
@@ -32,8 +31,9 @@ function App() {
   ]);
   return (
     <div className="app">
-      <Navbar />
-      <RouterProvider router={router} />
+      <div className="navbar">
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }

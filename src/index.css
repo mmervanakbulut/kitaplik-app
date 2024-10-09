@@ -1,6 +1,7 @@
 body {
   display: grid;
-  gap: 10px;
+  grid-gap: 0.5em;
+  grid-template-columns: 2fr 8fr 2fr;
   background-color: #e7e9eb;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,6 +12,9 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.container {
+  grid-column: 2/3;
 }
