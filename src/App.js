@@ -5,6 +5,7 @@ import Books from "./components/Books.js";
 import AddAuthor from "./components/Operations/AddAuthor.js";
 import AddPublisher from "./components/Operations/AddPublisher.js";
 import AddBook from "./components/Operations/AddBook.js";
+import Navbar from "./components/Navbar.js";
 
 function App() {
   const router = createBrowserRouter([
@@ -31,7 +32,10 @@ function App() {
   ]);
   return (
     <div className="app">
-      <div className="navbar">
+      <div className="navbar-container">
+        <Navbar />
+      </div>
+      <div className="content-container">
         <RouterProvider router={router} />
       </div>
     </div>

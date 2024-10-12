@@ -3,6 +3,10 @@
   display: grid;
   grid-template-columns: 2fr 8fr 2fr;
 }
-.navbar{
+.navbar-container{
+  background-color: #3a5e98;
+  grid-column: 1/4;
+}
+.content-container{
   grid-column: 2/3;
 }

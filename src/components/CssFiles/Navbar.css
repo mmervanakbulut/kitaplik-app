@@ -1,22 +1,26 @@
+.navbar{
+  background-color: #3a5e98;
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+}
 .navbar-tabs {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #3a5e98;
-    position: sticky;
-  }
-  
-  ul li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  grid-column: 2/3;
+  position: sticky;
+  overflow: hidden; 
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
   }
   
   /* Change the link color to #111 (black) on hover */
@@ -24,7 +28,20 @@
     background-color: #7d8db9;
   }
 
-  @media screen and (max-width: 600px) {
-    ul li, 
-    ul li {float: none;}
+  /* Ekran genişliği 600px'in altına düştüğünde grid yapısını iptal et */
+@media screen and (max-width: 600px) {
+  .navbar {
+    display: block; /* Grid yapısını iptal ediyoruz */
   }
+
+  .navbar-tabs {
+    grid-column: auto; /* Grid referanslarını kaldırıyoruz */
+    text-align: center; /* Merkezde hizalama yapabilirsin */
+  }
+
+  ul li {
+    float: none; /* Float özelliğini iptal ediyoruz */
+    display: block; /* Her öğeyi dikeyde sıralıyoruz */
+    width: 100%; /* Tam genişlik veriyoruz */
+  }
+}
