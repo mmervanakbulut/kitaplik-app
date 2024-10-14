@@ -4,7 +4,16 @@
     column-gap: 5px;
     overflow-x: auto;
 }
-table, th, td {
-    border: 1px solid;
-    border-radius: 5px;
-}
+
+label {
+    display: block;
+    font:
+      1rem 'Fira Sans',
+      sans-serif;
+  }
+  
+  input,
+  label {
+    margin: 0.4rem 0;
+  }
+  

@@ -32,8 +32,7 @@ export default function Books() {
             <th>Kitap Adı</th>
             <th>Kitap Türü</th>
             <th>Sayfa Sayısı</th>
-            <th>Yazar Adı</th>
-            <th>Soyadı</th>
+            <th>Yazar Adı- Soyadı</th>
             <th>Yayınevi</th>
           </tr>
         </thead>
@@ -47,8 +46,9 @@ export default function Books() {
               <td>{book.title}</td>
               <td>{book.description}</td>
               <td>{book.pageNumber}</td>
-              <td>{book.authorsName}</td>
-              <td>{book.authorsSurname}</td>
+              <td>
+                {book.authorsName} {book.authorsSurname}
+              </td>
               <td>{book.publisherName}</td>
             </tr>
           ))}
