@@ -25,7 +25,7 @@ export default function AddAuthor() {
         name: name, // Using 'name' as per your DB field
         surname: surname, // Using 'surname' as per your DB field
       });
-      if (response.status === 201) {
+      if (response.status === 200) {
         setSuccess(true); // If author is added successfully
       }
     } catch (err) {

@@ -1,0 +1,48 @@
+.add-publisher-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .add-publisher-form h2 {
+    text-align: center;
+  }
+  
+  .add-publisher-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .add-publisher-form input {
+    width: 100%; /* Ensures the input takes the full width */
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+  
+  .add-publisher-form button {
+    width: 100%; /* Ensures the button takes the full width like the inputs */
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box; /* Includes padding in width calculation */
+  }
+  
+  .add-publisher-form button:hover {
+    background-color: #45a049; /* Optional hover effect */
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+  }
+  
+  .success-message {
+    color: green;
+    text-align: center;
+  }
+  
