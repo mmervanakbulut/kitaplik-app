@@ -27,6 +27,8 @@ export default function AddAuthor() {
       });
       if (response.status === 200) {
         setSuccess(true); // If author is added successfully
+        setName("");
+        setSurname("");
       }
     } catch (err) {
       console.log(err);
