@@ -32,7 +32,7 @@ export default function Books() {
             <th>Kitap Adı</th>
             <th>Kitap Türü</th>
             <th>Sayfa Sayısı</th>
-            <th>Yazar Adı- Soyadı</th>
+            <th>Yazar Adı - Soyadı</th>
             <th>Yayınevi</th>
           </tr>
         </thead>
