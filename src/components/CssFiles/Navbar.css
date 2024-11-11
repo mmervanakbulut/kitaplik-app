@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
   background-color: #3a5e98;
   display: grid;
   grid-template-columns: 2fr 8fr 2fr;
@@ -6,7 +6,7 @@
 .navbar-tabs {
   grid-column: 2/3;
   position: sticky;
-  overflow: hidden; 
+  overflow: hidden;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -21,14 +21,14 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
-    background-color: #7d8db9;
-  }
+}
 
-  /* Ekran genişliği 600px'in altına düştüğünde grid yapısını iptal et */
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #7d8db9;
+}
+
+/* Ekran genişliği 600px'in altına düştüğünde grid yapısını iptal et */
 @media screen and (max-width: 600px) {
   .navbar {
     display: block; /* Grid yapısını iptal ediyoruz */

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CssFiles/AddPublisher.css"; // Optional: CSS for styling the form
+import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 const baseURL = "https://localhost:7168/api/Publisher"; // Update the endpoint if needed
 
@@ -10,7 +12,7 @@ export default function AddAuthor() {
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Formun sayfa yenilemeden çalışmasını sağlar
     setError(""); // Clear previous errors
     setSuccess(false); // Reset success status
 
@@ -29,30 +31,81 @@ export default function AddAuthor() {
       }
     } catch (err) {
       console.log(err);
-      setError("An error occurred while adding the author.");
+      setError("An error occurred while adding the publisher.");
     }
   };
 
+  useEffect(() => {
+    if (error || success) {
+      const timer = setTimeout(() => {
+        setError("");
+        setSuccess(false);
+      }, 2000); // Clear messages after 3 seconds
+
+      return () => clearTimeout(timer); // Clean up timer on component unmount or re-render
+    }
+  }, [error, success]);
+
   return (
-    <div className="add-publisher-form">
-      <h2>Add New Publisher</h2>
-      {error && <p className="error-message">{error}</p>}
+    <Container
+      maxWidth="sm"
+      sx={{
+        boxShadow: 3,
+        margin: "25px auto",
+        borderRadius: "16px",
+      }}
+    >
+      <Typography
+        sx={{
+          typography: "h6",
+          fontWeight: "bold",
+          textAlign: "center",
+          padding: "25px",
+        }}
+      >
+        Add New Publisher
+      </Typography>
+      {error && <Typography className="error-message">{error}</Typography>}
       {success && (
-        <p className="success-message">Publisher added successfully!</p>
+        <Typography className="success-message">
+          Publisher added successfully!
+        </Typography>
       )}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Publisher Name:</label>
-          <input
+      <Box
+        component="form"
+        sx={{ padding: "16px", textAlign: "center" }}
+        onSubmit={handleSubmit}
+      >
+        <Box>
+          {/* <label htmlFor="name">Publisher Name:</label> */}
+          <TextField
+            sx={{ paddingBottom: "16px" }}
+            value={name}
+            label="name"
+            variant="standard"
+            size="medium"
+            required
+            onChange={(e) => setName(e.target.value)}
+          ></TextField>
+          {/* <input
             type="text"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter author's name"
-          />
-        </div>
-        <button type="submit">Add Publisher</button>
-      </form>
-    </div>
+          /> */}
+        </Box>
+        <Button
+          type="submit"
+          variant="contained"
+          color="success"
+          size="medium"
+          endIcon={<SendIcon />}
+          sx={{ boxShadow: 10 }}
+        >
+          Add Publisher
+        </Button>
+      </Box>
+    </Container>
   );
 }
