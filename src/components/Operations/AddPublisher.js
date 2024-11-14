@@ -60,7 +60,7 @@ export default function AddAuthor() {
           typography: "h6",
           fontWeight: "bold",
           textAlign: "center",
-          padding: "25px",
+          padding: "25px 10px 10px 10px",
         }}
       >
         Add New Publisher
@@ -73,13 +73,13 @@ export default function AddAuthor() {
       )}
       <Box
         component="form"
-        sx={{ padding: "16px", textAlign: "center" }}
+        sx={{ paddingBottom: "25px", textAlign: "center" }}
         onSubmit={handleSubmit}
       >
         <Box>
           {/* <label htmlFor="name">Publisher Name:</label> */}
           <TextField
-            sx={{ paddingBottom: "16px" }}
+            sx={{ paddingBottom: "20px" }}
             value={name}
             label="name"
             variant="standard"
