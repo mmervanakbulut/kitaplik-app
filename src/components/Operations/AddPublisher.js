@@ -83,7 +83,7 @@ export default function AddAuthor() {
             value={name}
             margin="normal"
             label="name"
-            variant="outlined"
+            variant="standard"
             size="large"
             required
             onChange={(e) => setName(e.target.value)}
