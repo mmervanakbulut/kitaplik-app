@@ -48,19 +48,19 @@ export default function AddAuthor() {
 
   return (
     <Container
-      maxWidth="sm"
+      maxWidth="xs"
       sx={{
         boxShadow: 3,
         margin: "25px auto",
-        borderRadius: "16px",
+        borderRadius: "8px",
       }}
     >
       <Typography
         sx={{
-          typography: "h6",
+          typography: "h5",
           fontWeight: "bold",
           textAlign: "center",
-          padding: "25px 10px 10px 10px",
+          padding: "25px 10px 30px 10px",
         }}
       >
         Add New Publisher
@@ -76,14 +76,15 @@ export default function AddAuthor() {
         sx={{ paddingBottom: "25px", textAlign: "center" }}
         onSubmit={handleSubmit}
       >
-        <Box>
+        <Box sx={{ paddingBottom: "25px" }}>
           {/* <label htmlFor="name">Publisher Name:</label> */}
           <TextField
             sx={{ paddingBottom: "20px" }}
             value={name}
+            margin="normal"
             label="name"
-            variant="standard"
-            size="medium"
+            variant="outlined"
+            size="large"
             required
             onChange={(e) => setName(e.target.value)}
           ></TextField>
