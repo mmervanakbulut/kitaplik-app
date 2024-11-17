@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CssFiles/AddBook.css"; // Optional: CSS for styling the form
+import {
+  Box,
+  Button,
+  Container,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 const baseURL = "https://localhost:7168/api/Book";
 const authorsURL = "https://localhost:7168/api/Author";
@@ -65,35 +77,84 @@ export default function AddBook() {
       setError("An error occurred while adding the book.");
     }
   };
+  useEffect(() => {
+    if (error || success) {
+      const timer = setTimeout(() => {
+        setError("");
+        setSuccess(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [error, success]);
 
   return (
-    <div className="add-book-form">
-      <h2>Add New Book</h2>
-      {error && <p className="error-message">{error}</p>}
-      {success && <p className="success-message">Book added successfully!</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Book Title:</label>
+    <Container
+      maxWidth="xs"
+      sx={{
+        boxShadow: 3,
+        margin: "25px auto",
+        borderRadius: "8px",
+      }}
+    >
+      <Typography
+        sx={{
+          typography: "h5",
+          fontWeight: "bold",
+          textAlign: "center",
+          padding: "25px 10px 5px 10px",
+        }}
+      >
+        Add New Book
+      </Typography>
+      {error && <Typography className="error-message">{error}</Typography>}
+      {success && (
+        <Typography className="success-message">
+          Book added successfully!
+        </Typography>
+      )}
+      <Box
+        component="form"
+        sx={{ padding: "25px", textAlign: "center" }}
+        onSubmit={handleSubmit}
+      >
+        <Box sx={{ paddingBottom: "10px" }}>
+          {/* <label htmlFor="title">Book Title:</label>
           <input
             type="text"
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter book title"
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description:</label>
+          /> */}
+          <TextField
+            value={title}
+            label="title"
+            variant="standard"
+            size="large"
+            required
+            onChange={(e) => setTitle(e.target.value)}
+          ></TextField>
+        </Box>
+        <Box sx={{ paddingBottom: "10px" }}>
+          {/* <label htmlFor="description">Description:</label>
           <input
             type="text"
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter description"
-          />
-        </div>
-        <div>
-          <label htmlFor="pageNumber">Page Number:</label>
+          /> */}
+          <TextField
+            value={description}
+            label="description"
+            variant="standard"
+            size="large"
+            required
+            onChange={(e) => setDescription(e.target.value)}
+          ></TextField>
+        </Box>
+        <Box sx={{ paddingBottom: "10px" }}>
+          {/* <label htmlFor="pageNumber">Page Number:</label>
           <input
             type="number"
             id="pageNumber"
@@ -101,10 +162,18 @@ export default function AddBook() {
             onChange={(e) => setPageNumber(e.target.value)}
             placeholder="Enter page number"
             min="1"
-          />
-        </div>
-        <div>
-          <label htmlFor="author">Author:</label>
+          /> */}
+          <TextField
+            value={pageNumber}
+            label="pageNumber"
+            variant="standard"
+            size="large"
+            required
+            onChange={(e) => setPageNumber(e.target.value)}
+          ></TextField>
+        </Box>
+        <Box>
+          {/* <label htmlFor="author">Author:</label>
           <select
             id="author"
             value={authorId}
@@ -116,10 +185,29 @@ export default function AddBook() {
                 {author.name} {author.surname}
               </option>
             ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="publisher">Publisher:</label>
+          </select> */}
+          <FormControl required variant="standard" sx={{ m: 1, minWidth: 182 }}>
+            <InputLabel id="author-input-id">Author</InputLabel>
+            <Select
+              labelId="author-input-id"
+              label="Author"
+              value={authorId}
+              id="author"
+              onChange={(e) => setAuthorId(e.target.value)}
+            >
+              <MenuItem value="">
+                <em>Select an author</em>
+              </MenuItem>
+              {authors.map((author) => (
+                <MenuItem key={author.id} value={author.id}>
+                  {author.name} {author.surname}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box>
+          {/* <label htmlFor="publisher">Publisher:</label>
           <select
             id="publisher"
             value={publisherId}
@@ -131,10 +219,39 @@ export default function AddBook() {
                 {publisher.name}
               </option>
             ))}
-          </select>
-        </div>
-        <button type="submit">Add Book</button>
-      </form>
-    </div>
+          </select> */}
+          <FormControl required variant="standard" sx={{ m: 1, minWidth: 182 }}>
+            <InputLabel id="publisher-input-id">Publisher</InputLabel>
+            <Select
+              labelId="publisher-input-id"
+              label="Publisher"
+              value={publisherId}
+              id="publisher"
+              onChange={(e) => setPublisherId(e.target.value)}
+            >
+              <MenuItem value="">
+                <em>Select a publisher</em>
+              </MenuItem>
+              {publishers.map((publisher) => (
+                <MenuItem key={publisher.id} value={publisher.id}>
+                  {publisher.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+        {/* <button type="submit">Add Book</button> */}
+        <Button
+          type="submit"
+          variant="contained"
+          color="success"
+          size="medium"
+          endIcon={<SendIcon />}
+          sx={{ boxShadow: 10, marginTop: "25px" }}
+        >
+          Add Author
+        </Button>
+      </Box>
+    </Container>
   );
 }

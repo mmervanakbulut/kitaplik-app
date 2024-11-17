@@ -62,7 +62,7 @@ export default function AddAuthor() {
           typography: "h5",
           fontWeight: "bold",
           textAlign: "center",
-          padding: "25px 10px 30px 10px",
+          padding: "25px 10px 10px 10px",
         }}
       >
         Add New Author

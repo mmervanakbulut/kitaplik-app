@@ -60,7 +60,7 @@ export default function AddAuthor() {
           typography: "h5",
           fontWeight: "bold",
           textAlign: "center",
-          padding: "25px 10px 30px 10px",
+          padding: "25px 10px 20px 10px",
         }}
       >
         Add New Publisher
@@ -81,7 +81,6 @@ export default function AddAuthor() {
           <TextField
             sx={{ paddingBottom: "20px" }}
             value={name}
-            margin="normal"
             label="name"
             variant="standard"
             size="large"
